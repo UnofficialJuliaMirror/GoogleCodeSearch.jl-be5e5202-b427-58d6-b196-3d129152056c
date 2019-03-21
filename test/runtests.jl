@@ -78,6 +78,7 @@ function test_search(ctx::Ctx, datadir::String)
     # test split indices
     for ignorecase in (true, false)
         res = search(ctx, "Line2"; ignorecase=ignorecase)
+        @show res
         if ignorecase
             @test length(res) == length(test_data)
             for item in res
